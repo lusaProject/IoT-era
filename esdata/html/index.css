@@ -1,0 +1,332 @@
+body{
+    background-color: #F0F0F0;
+}
+
+button{
+    background-color: #4CAF50;
+    width: 100px;
+    color: white;
+    height: 50px;
+    /* border: none; */
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    color: green;
+    font-size: 200%;
+    background-color:rgba(241,241,241,.98);
+}
+
+
+/* ---------------------------------------------------------------------------- */
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+}
+
+ul.pagination li a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
+/* ---------------------------------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+.columns {
+    float: left;
+    width: 33.3%;
+    padding: 8px;
+}
+
+.price {
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+}
+
+.price li {
+    border-bottom: 1px solid #eee;
+    padding: 18px;
+    text-align: center;
+}
+
+.price .grey {
+    background-color: #eee;
+    font-size: 20px;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+    .columns {
+        width: 100%;
+    }
+}
+/* --------------------------------------------------------------------------- */
+#biaoti{
+    text-align:center;
+}
+#wenben{
+    color: green;
+    width: 100%;
+    height: 85%;
+    text-indent: 50px;
+    font-size: 120%;
+    overflow: scroll;
+}
+/* ---------------------------------------------------------------------------- */
+.right .daohan ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.right .daohan li {
+    float: left;
+}
+
+.right .daohan li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.right .daohan li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.right .daohan li.dropdown {
+    display: inline-block;
+}
+
+.right .daohan .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.right .daohan .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.right .daohan .dropdown-content a:hover {background-color: #f1f1f1}
+
+.right .daohan .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ---------------------------------------------------------------------------- */
+#mstext{
+    width: 100%;
+    height: 50%;
+    border: 1px solid black;
+}
+
+/* ---------------------------------------------------------------------------- */
+div.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+/* ---------------------------------------------------------------------------- */
+
+.window{
+    width: 1900px;
+    height: 950px;
+    display:-webkit-flex;
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-around;
+
+}
+/* -----------------------------------left------------------------------------ */
+.window .left{
+    width: 24%;
+    height: 99%;
+    margin:5px 5px 5px 5px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction:column ;
+    justify-content: space-around;
+
+}
+
+.window .left .up{
+    width: 99%;
+    height: 32%;
+    border: 1px solid black;
+
+}
+
+.window .left .centre{
+    width: 99%;
+    height: 32%;
+    border: 1px solid black;
+}
+
+.window .left .down{
+    width: 99%;
+    height: 32%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction:column ;
+    justify-content: space-around;
+}
+
+.window .left .down .control_01{
+    width: 100%;
+    height: 79%;
+    border: 1px solid black;
+}
+
+.window .left .down .control_02{
+    width: 100%;
+    height: 20%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* -----------------------------------display------------------------------------ */
+
+.window .display{
+    width: 50%;
+    height: 99%;
+    margin:5px 5px 5px 5px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction:column ;
+    justify-content: space-around;
+}
+
+.window .display .up{
+    width: 100%;
+    height: 49%;
+    border: 1px solid black;
+}
+
+.window .display .down{
+    width: 100%;
+    height: 49%;
+    border: 1px solid black;
+
+}
+
+/* -----------------------------------display------------------------------------ */
+
+.window .right{
+    width: 24%;
+    height: 99%;
+    margin:5px 5px 5px 5px;
+    border: 1px solid black;
+}
+
+/* -----------------------------------type--------------------------------------- */
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+table,td,th
+{
+	border:1px solid black;
+}
+table
+{
+    width:100%;
+    border-collapse:collapse;
+}
+th
+{
+    height:40px;
+    background-color: #4CAF50;
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" type="text/css">
+    <script type="text/javascript" src="./index.js"></script>
+</head>
+
+<body>
+    <div class="window">
+        <div class="left">
+            <div class="up">
+                <form action="#">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                    </select>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <div class="centre">
+                <table>
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                    </tr>
+                    <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>Lois</td>
+                        <td>Griffin</td>
+                        <td>$150</td>
+                    </tr>
+                    <tr>
+                        <td>Joe</td>
+                        <td>Swanson</td>
+                        <td>$300</td>
+                    </tr>
+                    <tr>
+                        <td>Cleveland</td>
+                        <td>Brown</td>
+                        <td>$250</td>
+                    </tr>
+                </table>
+                <br><br><br><br>
+                <div>
+                    <ul class="pagination">
+                        <li><a href="#">«</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">»</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="down">
+                <div class="control_01">
+                    <textarea class="subject_01" placeholder="发生测试信息..."" >
+
+                    </textarea>
+                </div>
+                <div class=" control_02">
+                    <button>启动</button>
+                    <button>暂停</button>
+                    <button>停止</button>
+                    <button onclick="myFunction()">清零</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="display">
+            <div class="up">
+                <div class="columns">
+                    <ul class="price">
+                        <li class="header">Basic</li>
+                        <li class="grey">$ 9.99 / year</li>
+                        <li>10GB Storage</li>
+                        <li>10 Emails</li>
+                        <li>10 Domains</li>
+                        <li>1GB Bandwidth</li>
+                        <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                    </ul>
+                </div>
+
+                <div class="columns">
+                    <ul class="price">
+                        <li class="header" style="background-color:#4CAF50">Pro</li>
+                        <li class="grey">$ 24.99 / year</li>
+                        <li>25GB Storage</li>
+                        <li>25 Emails</li>
+                        <li>25 Domains</li>
+                        <li>2GB Bandwidth</li>
+                        <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                    </ul>
+                </div>
+
+                <div class="columns">
+                    <ul class="price">
+                        <li class="header">Premium</li>
+                        <li class="grey">$ 49.99 / year</li>
+                        <li>50GB Storage</li>
+                        <li>50 Emails</li>
+                        <li>50 Domains</li>
+                        <li>5GB Bandwidth</li>
+                        <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="down">
+                <h3 id="biaoti">
+                    道可道 非常道
+                </h3>
+                <p id="wenben">
+                    庄子曰：“天地有大美而不言，四时有明法而不议，万物有成理而不说。”我们大多数时候会认为美就是看一场画展，听一段音乐会，他说不是，美在天地间。
+
+                    某个清晨或者黄昏，看见一片飘落的树叶，走过一个古老的村落，与一只小动物相遇，赤脚趟过清澈的河水，路边的青草幽香的气息，年近古稀的老人坐在远村的门前晒太阳，这时候我们感受到一种没有目的美。
+
+                    太多如我一样过着平常日子的人，每天穿梭在车水马龙的城市森林，很多美感在消失。按部就班的过着一种叫着生活的日子，循规蹈矩的重复着日月的交替，那些天地之间的美丽，淹没在柏油马路上，耳边充斥着各种各样的声音。
+
+                    真正的美是没有声音的，栀子花静静地开在院落，不言美丽，芳香醉人。图书馆鸦雀无声，低头阅读的姿势却是最美丽的剪影。寺庙里肃穆的佛印，地里埋头干活的老农，天地之间，自成一道风景。
+
+                    我们沿着生活的路，一步一步的走着。每个人的行走轨迹都不一样，我们过着属于自己的人生。人世间的万事万物，当我们活着的时候，都与我们息息相关。呼吸的空气里，传递出多种生活元素。阳光下，有人出生，有人死去，有人跌倒，有人爬起。世界承载着它独有的魅力，我们只能摸索着，一点一滴的与它相处。
+
+                    天地有大美而不言。
+
+                    被撞得鼻青脸肿时，热泪里含着微笑。被命运眷顾时，微笑里含着热泪。人活着，情感支撑着我们。我们深深的体会着生命带来的喜怒哀乐，爱恨情仇。在同一片天空下，太阳和月亮都是唯一，你和我一样都是唯一。没有相同的两片树叶，也没有相同命运的两个人。
+
+                    天地间，包罗万象。它用博大的胸怀把每一个生命拥入怀，从来不会责备人和事的发生。它默默的看着人间四季的变换，不言是最高的懂得，因为懂得，所以包容。
+
+                    我们沉溺在生活的河流，总是有透不过气的感觉，压迫我们的不是外来事物，而是我们内心的诉求。走出去，看看天地间的人，事，物，我们会释然，很多看似天崩地裂的事情，在天地间只是小小的尘埃一粒。随着时间的流逝，都会烟消云散。看不透人间悲欢，听不厌人间故事。生活里发生的点点滴滴，
+                    都是我们一路走来，所遇到的最美丽的风景。即便是不堪回首，往事也是写在我们一生中最宝贵的东西。
+
+                    那些花儿，依然开着。那些故事，依然在这。生命之美，就在于我们的所有遭遇，都刻画在了时间的墓碑上。天地间，你独自来到世界，然后静静的独自离去，一切都在不言中。
+                </p>
+            </div>
+
+        </div>
+
+        <div class="right">
+            <div class="daohan">
+                <ul>
+                    <li><a class="active" href="#home">主页</a></li>
+                    <li><a href="#news">新闻</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">下拉菜单</a>
+                        <div class="dropdown-content">
+                            <a href="#">链接 1</a>
+                            <a href="#">链接 2</a>
+                            <a href="#">链接 3</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="responsive">
+                <div class="img">
+                    <a target="_blank" href="./png/demo1.jpg">
+                        <img src="./png/demo1.jpg" alt="图片文本描述" width="300" height="200">
+                    </a>
+                    <div class="desc">这里添加图片文本描述</div>
+                </div>
+            </div>
+
+            <div class="responsive">
+                <div class="img">
+                    <a target="_blank" href="./png/demo2.jpg">
+                        <img src="./png/demo2.jpg" alt="图片文本描述" width="300" height="200">
+                    </a>
+                    <div class="desc">这里添加图片文本描述</div>
+                </div>
+            </div>
+
+            <div class="responsive">
+                <div class="img">
+                    <a target="_blank" href="./png/demo3.jpg">
+                        <img src="./png/demo3.jpg" alt="图片文本描述" width="300" height="200">
+                    </a>
+                    <div class="desc">这里添加图片文本描述</div>
+                </div>
+            </div>
+
+            <div class="responsive">
+                <div class="img">
+                    <a target="_blank" href="./png/demo4.jpg">
+                        <img src="./png/demo4.jpg" alt="图片文本描述" width="300" height="200">
+                    </a>
+                    <div class="desc">这里添加图片文本描述</div>
+                </div>
+            </div>
+
+            <div class="container">
+                <form action="/action_page.php">
+                    <label for="cname">联系人</label>
+                    <input type="text" id="cname" name="cname" placeholder="请输入姓名..">
+
+                    <label for="email">邮箱</label>
+                    <input type="text" id="email" name="email" placeholder="请输入邮箱..">
+
+                    <label for="country">城市</label>
+                    <select id="country" name="country">
+                        <option value="australia">北京</option>
+                        <option value="canada">上海</option>
+                        <option value="usa">厦门</option>
+                    </select>
+
+                    <label for="subject">反馈信息</label>
+                    <textarea id="subject" name="subject" placeholder="反馈内容.." style="height:200px"></textarea>
+
+                    <input type="submit" value="提交">
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

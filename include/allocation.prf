@@ -1,0 +1,15 @@
+INCLUDEPATH		+= $$PWD/core
+INCLUDEPATH		+= $$PWD/event
+INCLUDEPATH		+= $$PWD/event/modules
+INCLUDEPATH		+= $$PWD/os/unix
+INCLUDEPATH		+= $$PWD/objs
+INCLUDEPATH		+= $$PWD/http
+INCLUDEPATH		+= $$PWD/http/modules
+#-----------user lib--------------------------
+INCLUDEPATH		+= $$PWD/rapidjson
+
+#unix:!macx: LIBS += -lmysqlclient
+
+
+
+
