@@ -5,41 +5,35 @@
 
 using namespace std;
 
-namespace NSMLFWJKFUNCS
-{
-    typedef map<string, string> AttriNameAndValueDic;
+namespace NSMLFWJKFUNCS {
+typedef map<string, string> AttriNameAndValueDic;
 
-    struct NodeInfo
-    {
-        AttriNameAndValueDic attriNameAndValueDic;
-    };
+struct NodeInfo {
+    AttriNameAndValueDic attriNameAndValueDic;
+};
 
-    typedef vector<NodeInfo> NodeInfoSeq;
+typedef vector<NodeInfo> NodeInfoSeq;
 
-    struct TreeNodeInfo;
+struct TreeNodeInfo;
 
-    typedef vector<TreeNodeInfo> ListTree;
+typedef vector<TreeNodeInfo> ListTree;
 
-    struct TreeNodeInfo
-    {
-      NodeInfo nodeInfo;
-      ListTree childTreeNode;
-    };
+struct TreeNodeInfo {
+    NodeInfo nodeInfo;
+    ListTree childTreeNode;
+};
 }
 
 using namespace NSMLFWJKFUNCS;
 
-void showAllTreeNodeInfosIter(TreeNodeInfo& xs, int& count)
+void showAllTreeNodeInfosIter(TreeNodeInfo &xs, int &count)
 {
     count += 2;
 
-    for(int i=0; i<xs.childTreeNode.size(); i++)
-    {
-        for(auto iter = xs.childTreeNode[i].nodeInfo.attriNameAndValueDic.begin();
-            iter != xs.childTreeNode[i].nodeInfo.attriNameAndValueDic.end(); iter++)
-        {
-            for(int i=0; i<count; i++)
-            {
+    for (int i = 0; i < xs.childTreeNode.size(); i++) {
+        for (auto iter = xs.childTreeNode[i].nodeInfo.attriNameAndValueDic.begin();
+                iter != xs.childTreeNode[i].nodeInfo.attriNameAndValueDic.end(); iter++) {
+            for (int i = 0; i < count; i++) {
                 cout << "--";
             }
             cout << iter->first << " : " << iter->second << endl;
@@ -49,17 +43,16 @@ void showAllTreeNodeInfosIter(TreeNodeInfo& xs, int& count)
     }
 }
 
-void setAttriNameAndAttriValueToNodeInfo(NodeInfo& nodeInfo)
+void setAttriNameAndAttriValueToNodeInfo(NodeInfo &nodeInfo)
 {
     nodeInfo.attriNameAndValueDic.insert(pair<string, string>("Name", "laowang"));
     nodeInfo.attriNameAndValueDic.insert(pair<string, string>("age", "24"));
     nodeInfo.attriNameAndValueDic.insert(pair<string, string>("sex", "man"));
 }
 
-void setAllNodeInfos(TreeNodeInfo& xs, int& sum)
+void setAllNodeInfos(TreeNodeInfo &xs, int &sum)
 {
-    if(sum < 5)
-    {
+    if (sum < 5) {
         TreeNodeInfo temp;
         setAttriNameAndAttriValueToNodeInfo(temp.nodeInfo);
         sum++;
@@ -69,7 +62,7 @@ void setAllNodeInfos(TreeNodeInfo& xs, int& sum)
 }
 
 
-int TreeNode()
+int treeNode()
 {
     cout << "-------start----------" << endl;
 

@@ -10,6 +10,10 @@
 #include <ngx_core.h>
 #include <ngx_http.h>
 #include <string.h>
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 //extern MYSQL *mysql;
 
@@ -18,12 +22,9 @@
 extern "C" {
 #endif
 
-void http_test_body_hander(ngx_http_request_t *r)
-{
-    int status = NGX_HTTP_OK;
-    ngx_int_t     rc;
-    ngx_chain_t   out;
 
+void get_body_hander(ngx_http_request_t *r, string &bodyData)
+{
     ngx_chain_t *bufs = r->request_body->bufs;
     ngx_buf_t *buf = NULL;
     uint8_t *data_buf = NULL;
@@ -61,20 +62,30 @@ void http_test_body_hander(ngx_http_request_t *r)
         data_buf[body_length] = 0;
     }
 
+    bodyData = (char *)data_buf;
+}
+
+void http_test_body_hander(ngx_http_request_t *r)
+{
+    string body_buf;
+    get_body_hander(r, body_buf);
+
     ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, "%s\n", "post_test_handler");
-    ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, "%s\n", data_buf);
+    ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, "%s\n", body_buf.c_str());
 
     /*-------Parse json-------*/
 
     rapidjson::Document dom;
 
-    if (!dom.Parse((char *)data_buf).HasParseError()) {
+    cout << body_buf << endl;
+
+    if (!dom.Parse((char *)body_buf.c_str()).HasParseError()) {
         if (dom.HasMember("id") && dom["id"].IsString()) {
-            fprintf(stdout, "id: %s\n", dom["id"].GetString());
+            //fprintf(stdout, "id: %s\n", dom["id"].GetString());
         }
 
         if (dom.HasMember("name") && dom["name"].IsString()) {
-            fprintf(stdout, "name: %s\n", dom["name"].GetString());
+            //fprintf(stdout, "name: %s\n", dom["name"].GetString());
         }
 
     }
@@ -84,12 +95,19 @@ void http_test_body_hander(ngx_http_request_t *r)
     cJSON_AddStringToObject(root, "name", "tp");
     char *json_data = cJSON_PrintUnformatted(root);
 
-    int json_len = strlen(json_data) + 1;
-    char send_buf[json_len];
 
-    strcpy(send_buf, json_data);
+    string send_buf = json_data;
+    ngx_http_post_send(r, send_buf);
+}
 
-    ngx_str_t response = ngx_string(send_buf);
+void ngx_http_post_send(ngx_http_request_t *r, string &sendData)
+{
+
+    int status = NGX_HTTP_OK;
+    ngx_int_t     rc;
+    ngx_chain_t   out;
+
+    // ngx_str_t response = ngx_string(sendData.c_str());
 
     if (status != NGX_HTTP_OK) {
         ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, "Post failed.");
@@ -100,17 +118,17 @@ void http_test_body_hander(ngx_http_request_t *r)
     ngx_str_t type = ngx_string("application/json;charset=GB2312");
     r->headers_out.status = NGX_HTTP_OK;
     r->headers_out.content_type = type;
-    r->headers_out.content_length_n = response.len;
+    r->headers_out.content_length_n = sendData.length();
 
-    ngx_buf_t  *b = ngx_create_temp_buf(r->pool, response.len);
+    ngx_buf_t  *b = ngx_create_temp_buf(r->pool, sendData.length());
     if (b == NULL) {
         ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, "Failed to allocate response buffer.");
         ngx_http_finalize_request(r, NGX_HTTP_INTERNAL_SERVER_ERROR);
         return;
     }
 
-    ngx_memcpy(b->pos, response.data, response.len);
-    b->last = b->pos + response.len;
+    ngx_memcpy(b->pos, sendData.c_str(), sendData.length());
+    b->last = b->pos + sendData.length();
     b->last_buf = 1;
 
     out.buf = b;
@@ -124,10 +142,8 @@ void http_test_body_hander(ngx_http_request_t *r)
     }
 
     ngx_http_finalize_request(r, ngx_http_output_filter(r, &out));
-
     return;
 }
-
 
 int post_test_handler(ngx_http_request_t *r)
 {
@@ -138,6 +154,39 @@ int post_test_handler(ngx_http_request_t *r)
         return rc;
     }
     return NGX_DONE;
+}
+
+
+int ngx_http_get_send(ngx_http_request_t *r, string &sendData)
+{
+    //  ngx_str_t response = ngx_string(sendData.c_str());
+
+    ngx_str_t type = ngx_string("application/json;charset=GB2312");
+
+    r->headers_out.content_type = type;
+    r->headers_out.status = NGX_HTTP_OK;
+    r->headers_out.content_length_n = sendData.length();
+
+    ngx_buf_t *b = ngx_create_temp_buf(r->pool, sendData.length());
+    if (b == NULL) {
+        ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, "Failed to allocate response buffer.");
+        return NGX_HTTP_INTERNAL_SERVER_ERROR;
+    }
+
+    ngx_memcpy(b->pos, sendData.c_str(), sendData.length());
+    b->last = b->pos + sendData.length();
+    b->last_buf = 1;
+
+    ngx_chain_t out;
+    out.buf = b;
+    out.next = NULL;
+
+    ngx_int_t rc = ngx_http_send_header(r);
+    if (rc == NGX_ERROR || rc > NGX_OK || r->header_only) {
+        return rc;
+    }
+
+    return ngx_http_output_filter(r, &out);
 }
 
 
@@ -167,39 +216,9 @@ int get_test_handler(ngx_http_request_t *r)
 //    std::string dirRet =  getDirList("/home");
 //    json_data = (char *)dirRet.c_str();
 
-    int json_len = strlen(json_data) + 1;
-    char send_buf[json_len];
+    string send_buf = json_data;
 
-    strcpy(send_buf, json_data);
-
-    ngx_str_t response = ngx_string(send_buf);
-
-    ngx_str_t type = ngx_string("application/json;charset=GB2312");
-
-    r->headers_out.content_type = type;
-    r->headers_out.status = NGX_HTTP_OK;
-    r->headers_out.content_length_n = response.len;
-
-    ngx_buf_t *b = ngx_create_temp_buf(r->pool, response.len);
-    if (b == NULL) {
-        ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, "Failed to allocate response buffer.");
-        return NGX_HTTP_INTERNAL_SERVER_ERROR;
-    }
-
-    ngx_memcpy(b->pos, response.data, response.len);
-    b->last = b->pos + response.len;
-    b->last_buf = 1;
-
-    ngx_chain_t out;
-    out.buf = b;
-    out.next = NULL;
-
-    ngx_int_t rc = ngx_http_send_header(r);
-    if (rc == NGX_ERROR || rc > NGX_OK || r->header_only) {
-        return rc;
-    }
-
-    return ngx_http_output_filter(r, &out);
+    ngx_http_get_send(r, send_buf);
 }
 
 #ifdef __cplusplus

@@ -15,8 +15,8 @@ SOURCES += \
     database.cpp \
     datapacket.cpp \
     pluginsHttp.cpp \
-    CustomThreadPool.cpp \
-    TreeNode.cpp
+    threadPool.cpp \
+    treeNode.cpp
 
 
 HEADERS += \
@@ -24,5 +24,5 @@ HEADERS += \
     database.h \
     datapacket.h \
     pluginsHttp.h \
-    CustomThreadPool.h
+    threadPool.h
 
