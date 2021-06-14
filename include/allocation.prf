@@ -8,7 +8,7 @@ INCLUDEPATH		+= $$PWD/http/modules
 #-----------user lib--------------------------
 INCLUDEPATH		+= $$PWD/rapidjson
 
-#unix:!macx: LIBS += -lmysqlclient
+unix:!macx: LIBS += -lmysqlclient
 
 
 

@@ -5,7 +5,7 @@
 #include "rapidjson/stringbuffer.h"
 #include "cJSON.h"
 #include "datapacket.h"
-//#include <mysql/mysql.h>
+#include <mysql/mysql.h>
 #include <ngx_config.h>
 #include <ngx_core.h>
 #include <ngx_http.h>
@@ -15,7 +15,7 @@
 
 using namespace std;
 
-//extern MYSQL *mysql;
+extern MYSQL *mysql;
 
 
 #ifdef __cplusplus
@@ -194,9 +194,9 @@ int get_test_handler(ngx_http_request_t *r)
 {
     ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, "%s\n", "get_test_handler");
 
-#if 0
+#if 1
     /* 插入数据 */
-    char buf[] = "INSERT INTO `weixx`.`test` (`ID`, `name`, `age`) VALUES ('5', 'aaaaa', '213');";
+    char buf[] = "INSERT INTO `weixx`.`test` (`ID`, `name`, `age`) VALUES (12, 'aaaaa', '213');";
 
     int t = mysql_real_query(mysql, buf, strlen(buf));
     if (t) {
