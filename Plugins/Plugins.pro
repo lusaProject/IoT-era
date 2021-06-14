@@ -12,17 +12,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     cJSON.c \
-    database.cpp \
     datapacket.cpp \
     pluginsHttp.cpp \
     threadPool.cpp \
-    treeNode.cpp
+    treeNode.cpp \
+    businessRequest.cpp
 
 
 HEADERS += \
     cJSON.h \
-    database.h \
     datapacket.h \
     pluginsHttp.h \
-    threadPool.h
+    threadPool.h \
+    businessRequest.h
 
