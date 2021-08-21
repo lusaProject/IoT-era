@@ -1,13 +1,13 @@
 #include "businessRequest.h"
 #include "pluginsHttp.h"
 
-#include <mysql/mysql.h>
+//#include <mysql/mysql.h>
 #include <ngx_config.h>
 #include <ngx_core.h>
 #include <ngx_http.h>
 #include <string>
 
-MYSQL *mysql;
+//MYSQL *mysql;
 
 #ifdef __cplusplus
 extern "C" {
@@ -15,6 +15,7 @@ extern "C" {
 
 void init_handler()
 {
+#if 0
     // 初始化mysql
     mysql = mysql_init(NULL);
 
@@ -27,6 +28,7 @@ void init_handler()
     } else {
         printf("Connect sucessfully!\n");
     }
+#endif
 }
 
 void get_body_hander(ngx_http_request_t *r, std::string &bodyData)

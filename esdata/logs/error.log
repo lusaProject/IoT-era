@@ -1,0 +1,39 @@
+2021/08/21 23:24:31 [error] 7149#0: *1 open() "../esdata/../esdata/html/index.js" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /index.js HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:24:31 [error] 7149#0: *1 open() "../esdata/../esdata/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:24:33 [error] 7149#0: *1 get_test_handler
+, client: 127.0.0.1, server: localhost, request: "GET /tp/api/get_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:24:34 [error] 7149#0: *1 post_test_handler
+, client: 127.0.0.1, server: localhost, request: "POST /tp/api/post_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:24:34 [error] 7149#0: *1 id=335261&name=sccuu
+, client: 127.0.0.1, server: localhost, request: "POST /tp/api/post_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:24:51 [error] 7149#0: *1 get_test_handler
+, client: 127.0.0.1, server: localhost, request: "GET /tp/api/get_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:24:52 [error] 7149#0: *1 post_test_handler
+, client: 127.0.0.1, server: localhost, request: "POST /tp/api/post_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:24:52 [error] 7149#0: *1 id=335261&name=sccuu
+, client: 127.0.0.1, server: localhost, request: "POST /tp/api/post_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:26:11 [error] 7149#0: *3 get_test_handler
+, client: 127.0.0.1, server: localhost, request: "GET /tp/api/get_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:26:12 [error] 7149#0: *3 post_test_handler
+, client: 127.0.0.1, server: localhost, request: "POST /tp/api/post_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:26:12 [error] 7149#0: *3 id=335261&name=sccuu
+, client: 127.0.0.1, server: localhost, request: "POST /tp/api/post_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:26:13 [error] 7149#0: *3 get_test_handler
+, client: 127.0.0.1, server: localhost, request: "GET /tp/api/get_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:26:13 [error] 7149#0: *3 post_test_handler
+, client: 127.0.0.1, server: localhost, request: "POST /tp/api/post_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:26:13 [error] 7149#0: *3 id=335261&name=sccuu
+, client: 127.0.0.1, server: localhost, request: "POST /tp/api/post_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:26:14 [error] 7149#0: *3 get_test_handler
+, client: 127.0.0.1, server: localhost, request: "GET /tp/api/get_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:26:14 [error] 7149#0: *3 post_test_handler
+, client: 127.0.0.1, server: localhost, request: "POST /tp/api/post_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:26:14 [error] 7149#0: *3 id=335261&name=sccuu
+, client: 127.0.0.1, server: localhost, request: "POST /tp/api/post_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/"
+2021/08/21 23:26:52 [error] 7149#0: *3 open() "../esdata/../esdata/html/index.js" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /index.js HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/?firstname=&lastname=&country=usa"
+2021/08/21 23:27:12 [error] 7149#0: *3 get_test_handler
+, client: 127.0.0.1, server: localhost, request: "GET /tp/api/get_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/?firstname=&lastname=&country=usa"
+2021/08/21 23:27:13 [error] 7149#0: *3 post_test_handler
+, client: 127.0.0.1, server: localhost, request: "POST /tp/api/post_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/?firstname=&lastname=&country=usa"
+2021/08/21 23:27:13 [error] 7149#0: *3 id=335261&name=sccuu
+, client: 127.0.0.1, server: localhost, request: "POST /tp/api/post_test_tp HTTP/1.1", host: "127.0.0.1:8080", referrer: "http://127.0.0.1:8080/?firstname=&lastname=&country=usa"
