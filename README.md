@@ -7,16 +7,6 @@
 
 ​	程序运行之后，浏览器输入 http://127.0.0.1:8080/，效果图如下：
 
-![](resources/index.png)
-
-
-
- 前端网页使用 H5 + JavaScript + CSS 技术， 使用渐进式开发框架vue，请求后端使用 [axios](https://www.runoob.com/vue2/vuejs-ajax-axios.html) 来完成 ajax 请求。	
-
-![](resources/emulate.png)
-
-
-
 ## Deepin(uos) 安装MySQL
 
 添加阿里的镜像源
